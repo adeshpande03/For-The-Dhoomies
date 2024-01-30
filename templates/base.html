@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-
-    <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename= 'css/style.css') }}"
@@ -22,11 +19,25 @@
     />
     <link
       rel="icon"
-      href="{{ url_for('static', filename= 'img/tempIcon.png') }}"
+      href="{{ url_for('static', filename= 'img/favicon.ico') }}"
     />
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{url_for('static', filename= 'img/apple-touch-icon.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{url_for('static', filename= 'img/favicon-32x32.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{url_for('static', filename= 'img/favicon-16x16.png') }}"
+    />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.min.js"
       integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj+KsslFkCOt3TvJrX2AV/Gc3wOqA=="
@@ -48,11 +59,11 @@
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
     <title>{% block title %} {% endblock %}</title>
   </head>
-  <body onload="readyMessage()">
+  <body>
     <div class="wrapper">
       <div class="content">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand light-green" href="/">For the Dhoomies</a>
+        <nav class="navbar navbar-expand-lg navbar-light navbar-background">
+          <a class="navbar-brand dhoom-orange" href="/">For The Dhoomies</a>
           <button
             class="navbar-toggler"
             type="button"

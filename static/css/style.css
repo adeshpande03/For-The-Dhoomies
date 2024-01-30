@@ -17,20 +17,17 @@ nav.navbar {
   padding-right: 1em;
 }
 
-.light-green {
-  color: #1db954 !important;
+body {
+  background-color: #faebc8 !important;
 }
 
-.light-green-button {
-  background-color: #1db954 !important;
-  border-color: #1db954;
-  color: #fff;
+
+.dhoom-orange {
+  color: #dd5150 !important;
 }
 
-.light-green-button:hover {
-  background-color: #189e47 !important;
-  border-color: #189e47;
-  color: #fff;
+.navbar-background {
+  background-color: #f6c492 !important;
 }
 
 a.nav-item {
@@ -39,9 +36,6 @@ a.nav-item {
   border-bottom: 1px solid transparent;
 }
 
-a.nav-item:hover {
-  border-color: #189e47;
-}
 
 #resultTable td,
 th {
@@ -99,7 +93,7 @@ tr:nth-child(even) {
 }
 
 th {
-  background-color: #04aa6d;
+  background-color: #dd5150;
   color: white;
 }
 
