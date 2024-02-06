@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block title %} Home {% endblock %} {% block
+menu_items %} {% endblock %} {% block main %}
+<h1 class="dhoom-orange">For The Dhoomies</h1>
+<form
+  action="/upload"
+  method="POST"
+  enctype="multipart/form-data"
+  id="nameFileForm"
+  name="nameFileForm"
+>
+  <div id="formfield">
+    <input type="text" name="text[]" class="text" />
+  </div>
+  <input
+    type="button"
+    name="addTeammate"
+    id="addTeammate"
+    value="Add Teammate"
+    onclick="add()"
+  />
+  <input type="file" name="file[]" multiple />
+  <input type="submit" value="Submit" />
+</form>
+{% endblock %}
