@@ -163,3 +163,4 @@ cython_debug/
 setvar.sh
 
 tempimg.jpeg
+./uploads
