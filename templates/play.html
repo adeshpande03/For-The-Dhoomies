@@ -1,13 +1,36 @@
 {% extends 'base.html' %} {% block title %} Play {% endblock %} {% block
 menu_items %} {% endblock %} {% block main %}
-<h2>Random Image</h2>
-<img
-  id="randomImage"
-  src=""
-  alt="Random Image"
-  style="max-width: 500px; max-height: 500px"
-/>
-<br /><br />
-<button onclick="showRandomImage()">Show Another Image</button>
+<h1 class="dhoom-orange">For The Dhoomies</h1>
+<div class="float-container">
+  <img
+    class="float-child-0"
+    id="randomImage"
+    src=""
+    alt="Random Image"
+    class="imgThing"
+  />
+  <div class="float-child-1" id="scores">
+    {% for name in player_names %}
+    <div class="score-wrapper">
+      {{ name }}: <span id="score{{loop.index0}}">0</span>
+      <button
+        class="btn btn-outline-success"
+        onclick="modifyScore({{loop.index0}}, 1)"
+      >
+        +
+      </button>
+      <button
+        class="btn btn-outline-danger"
+        onclick="modifyScore({{loop.index0}}, -1)"
+      >
+        -
+      </button>
+    </div>
+    {% endfor %}
+    <button class="btn btn-primary btn3" onclick="showRandomImage()">
+      Next
+    </button>
+  </div>
+</div>
 
 {% endblock %}

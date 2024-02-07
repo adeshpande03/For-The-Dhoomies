@@ -7,18 +7,27 @@ menu_items %} {% endblock %} {% block main %}
   enctype="multipart/form-data"
   id="nameFileForm"
   name="nameFileForm"
+  class="customForm"
 >
-  <div id="formfield">
-    <input type="text" name="text[]" class="text" />
-  </div>
+  <input
+    type="button"
+    name="removeTeammate"
+    id="removeTeammate"
+    value="Remove Player"
+    onclick="remove()"
+    class="btn btn-outline-danger btns"
+  />
   <input
     type="button"
     name="addTeammate"
     id="addTeammate"
-    value="Add Teammate"
+    value="Add Player"
     onclick="add()"
+    class="btn btn-outline-success btns"
   />
-  <input type="file" name="file[]" multiple />
-  <input type="submit" value="Submit" />
+  <div class="form-group" id="formfield"></div>
+
+  <input class="form-control fileThing" type="file" name="file[]" multiple />
+  <input class="btn btn-primary submitBtn" type="submit" value="Submit" />
 </form>
 {% endblock %}
