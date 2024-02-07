@@ -1,13 +1,10 @@
+import atexit
 import os
-from flask_uploads import UploadSet, IMAGES, configure_uploads
 from flask import (
     Flask,
     redirect,
     render_template,
     request,
-    session,
-    send_file,
-    make_response,
     flash,
     url_for,
     send_from_directory,
@@ -63,7 +60,7 @@ def upload_files():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
     flash("Files successfully uploaded")
-    player_names = request.form.getlist('playerName[]')
+    player_names = request.form.getlist("playerName[]")
     app.playerNames = player_names
     print(player_names)
     return redirect(url_for("show_random_image"))
@@ -71,7 +68,7 @@ def upload_files():
 
 @app.route("/random-image")
 def show_random_image():
-    player_names=app.playerNames
+    player_names = app.playerNames
     return render_template("play.html", player_names=player_names)
 
 
@@ -91,6 +88,11 @@ def get_random_image():
         random.shuffle(files)
         app.picidx = 0
     return send_from_directory(app.config["UPLOAD_FOLDER"], files[app.picidx])
+
+
+@atexit.register
+def goodbye():
+    clear_uploads_folder()
 
 
 if __name__ == "__main__":
